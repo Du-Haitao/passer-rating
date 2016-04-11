@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B25647D11CB00F080089F8D6 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = B25647D01CB00F080089F8D6 /* main.c */; };
+		B25647D91CB013CF0089F8D6 /* rating.c in Sources */ = {isa = PBXBuildFile; fileRef = B25647D71CB013CF0089F8D6 /* rating.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,11 +24,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B211CBA51CB3F94A00B6DEDC /* libpasser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpasser.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25647CD1CB00F080089F8D6 /* passer-rating */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "passer-rating"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25647D01CB00F080089F8D6 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		B25647D71CB013CF0089F8D6 /* rating.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rating.c; sourceTree = "<group>"; };
+		B25647D81CB013CF0089F8D6 /* rating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rating.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B211CBA21CB3F94900B6DEDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B25647CA1CB00F080089F8D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				B25647CD1CB00F080089F8D6 /* passer-rating */,
+				B211CBA51CB3F94A00B6DEDC /* libpasser.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,13 +70,42 @@
 			isa = PBXGroup;
 			children = (
 				B25647D01CB00F080089F8D6 /* main.c */,
+				B25647D71CB013CF0089F8D6 /* rating.c */,
+				B25647D81CB013CF0089F8D6 /* rating.h */,
 			);
 			path = "passer-rating";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		B211CBA31CB3F94900B6DEDC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		B211CBA41CB3F94900B6DEDC /* passer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B211CBA81CB3F94A00B6DEDC /* Build configuration list for PBXNativeTarget "passer" */;
+			buildPhases = (
+				B211CBA11CB3F94900B6DEDC /* Sources */,
+				B211CBA21CB3F94900B6DEDC /* Frameworks */,
+				B211CBA31CB3F94900B6DEDC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = passer;
+			productName = passer;
+			productReference = B211CBA51CB3F94A00B6DEDC /* libpasser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		B25647CC1CB00F080089F8D6 /* passer-rating */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B25647D41CB00F080089F8D6 /* Build configuration list for PBXNativeTarget "passer-rating" */;
@@ -91,6 +132,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Du-Haitao";
 				TargetAttributes = {
+					B211CBA41CB3F94900B6DEDC = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					B25647CC1CB00F080089F8D6 = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -109,15 +153,24 @@
 			projectRoot = "";
 			targets = (
 				B25647CC1CB00F080089F8D6 /* passer-rating */,
+				B211CBA41CB3F94900B6DEDC /* passer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B211CBA11CB3F94900B6DEDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B25647C91CB00F080089F8D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B25647D91CB013CF0089F8D6 /* rating.c in Sources */,
 				B25647D11CB00F080089F8D6 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +178,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		B211CBA61CB3F94A00B6DEDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B211CBA71CB3F94A00B6DEDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		B25647D21CB00F080089F8D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -223,6 +292,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B211CBA81CB3F94A00B6DEDC /* Build configuration list for PBXNativeTarget "passer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B211CBA61CB3F94A00B6DEDC /* Debug */,
+				B211CBA71CB3F94A00B6DEDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B25647C81CB00F080089F8D6 /* Build configuration list for PBXProject "passer-rating" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -239,6 +316,7 @@
 				B25647D61CB00F080089F8D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
